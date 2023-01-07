@@ -1,0 +1,34 @@
+---
+title: "Bayesian inference for a sequence of coinflips"
+author: "Jakob Hoffmann"
+date: "01/01/2021"
+format: html
+jupyter: julia-1.9
+---
+
+
+## Setup
+
+```{julia}
+
+```
+
+## Model definition
+
+```{julia}
+
+```
+
+## Model estimation
+
+```{julia}
+
+```
+
+## Model checking
+
+```{julia}
+
+```
+
+## Model inference
