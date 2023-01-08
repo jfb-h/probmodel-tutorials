@@ -3,9 +3,8 @@ title: "Bayesian inference for a sequence of coinflips"
 author: "Jakob Hoffmann"
 date: "01/01/2021"
 format: html
-jupyter: julia-1.9
+jupyter: julia-1.8
 ---
-
 
 ## Setup
 
@@ -32,3 +31,7 @@ jupyter: julia-1.9
 ```
 
 ## Model inference
+
+```{julia}
+
+```

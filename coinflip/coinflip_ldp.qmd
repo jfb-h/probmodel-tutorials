@@ -3,7 +3,7 @@ title: "Bayesian inference for a sequence of coinflips"
 author: "Jakob Hoffmann"
 date: "01/01/2023"
 format: html
-jupyter: julia-1.9
+jupyter: julia-1.8
 ---
 
 
@@ -129,10 +129,22 @@ as well as some statistics about the sampling procedure, which can be used to ch
 
 ## Model checking
 
+Having obtained samples from the posterior distribution, we're in principle ready to 
+use our model for inference, i.e., answer the question of whether our coin is biased
+and by how much, and how certain we can be of the answer based on the data we have seen.
+
+However, before we jump to inference, it is good practice to perform some model checks: 
+Our estimates rely on a numerical sampling scheme, which can fail rendering the results
+unreliable. 
+
 ```{julia}
 using MCMCDiagnosticTools
 using DynamicHMC.Diagnostics
 ```
+
+First, we chan check the effective sample size (ess). In Markov chain monte carlo (MCMC) approaches,
+samples are often correlated, meaning that the total number of 'effective' samples is less than
+obtained by an uncorrelated sampling procedure.
 
 ```{julia}
 ess, Rhat =  ess_rhat(stack_posterior_matrices(result))
